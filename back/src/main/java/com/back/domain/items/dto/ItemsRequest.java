@@ -1,5 +1,6 @@
 package com.back.domain.items.dto;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
@@ -8,6 +9,9 @@ public class ItemsRequest {
     public record ItemAddReqBody(
             @NotBlank(message = "상품 이름을 입력해주세요.")
             String name,
+
+            @NotBlank(message = "상품 이미지 URL을 입력해주세요.")
+            String imageUrl,
 
             @NotBlank(message = "상품 설명을 입력해주세요.")
             String description,
@@ -23,6 +27,9 @@ public class ItemsRequest {
             @NotBlank(message = "상품 이름을 입력해주세요.")
             String name,
 
+            @NotBlank(message = "상품 이미지 URL을 입력해주세요.")
+            String imageUrl,
+
             @NotBlank(message = "상품 설명을 입력해주세요.")
             String description,
 
@@ -32,4 +39,11 @@ public class ItemsRequest {
             int inventory
     ) {
     }
+
+    public record ItemImageUrlModifyReqBody(
+            @NotBlank(message = "상품 이미지 URL을 입력해주세요.")
+            String imageUrl
+    ) {
+    }
 }
+
