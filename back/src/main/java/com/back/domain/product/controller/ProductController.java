@@ -70,8 +70,7 @@ public class ProductController {
 
         return new RsData<>(
             "200-1",
-                "%d번 상품이 삭제되었습니다.".formatted(id),
-                null
+                "%d번 상품이 삭제되었습니다.".formatted(id)
         );
     }
 
